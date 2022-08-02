@@ -1,15 +1,14 @@
 import { Stack } from '@chakra-ui/react'
 import { Flex, Heading, Text, useBreakpointValue, Button, Image } from '@chakra-ui/react';
-import Head from '../../node_modules/next/head';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Header } from '../components/Header/index';
 
 export default function Home() {
   
   return (
     <>
-      <Head>
-        <title>Catch u</title>
-      </Head>
+      <Header>
+      </Header>
 
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>

@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import { Flex, Text, ButtonGroup, Button, Box, useColorModeValue, IconButton, useDisclosure, useBreakpointValue, Stack, PopoverTrigger, Popover, PopoverContent, Link, Icon, Collapse } from '@chakra-ui/react'
 
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 import {
     HamburgerIcon,
@@ -12,6 +12,9 @@ import {
 
 export function Header() {
     const { isOpen, onToggle } = useDisclosure();
+
+    const router = useRouter();
+    
 
     return (
         <Box>
@@ -63,10 +66,12 @@ export function Header() {
                         fontWeight={400}
                         variant={'outline'}
                         href={'#'}
-                        colorScheme={'bluePrimary.500'}>
+                        colorScheme={'bluePrimary.500'}
+                        onClick={() => router.push('/login')}
+                        >
                         Login
                     </Button>
-        
+
                     <Button
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
@@ -76,7 +81,9 @@ export function Header() {
                         href={'#'}
                         _hover={{
                             bg: 'bluePrimary.600',
-                        }}>
+                        }}
+                        onClick={() => router.push('/cadastro')}
+                        >
                         Cadastro
                     </Button>
                 </Stack>
