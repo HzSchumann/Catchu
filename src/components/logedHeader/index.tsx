@@ -14,7 +14,7 @@ import {
     useDisclosure,
     useColorModeValue,
     Stack,
-    
+
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { HamburgerIcon, CloseIcon, BellIcon, CopyIcon, DragHandleIcon } from '@chakra-ui/icons';
@@ -40,7 +40,7 @@ export function LogedHeader() {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const router = useRouter();
-    
+
 
     return (
         <>
@@ -88,7 +88,7 @@ export function LogedHeader() {
                             aria-label={'Notificações'}
                             onClick={() => router.push('/notificacoes')}
                         />
-                            
+
                         <Menu>
                             <MenuButton
                                 as={Button}
@@ -104,10 +104,18 @@ export function LogedHeader() {
                                 />
                             </MenuButton>
                             <MenuList>
-                                <MenuItem>Link 1</MenuItem>
-                                <MenuItem>Link 2</MenuItem>
+                                <MenuItem
+                                    onClick={() => router.push('/perfil')}
+                                >
+                                    Configurações
+                                </MenuItem>
+                                <MenuItem
+                                    onClick={() => router.push('/assinatura')}
+                                >
+                                    Assinatura
+                                </MenuItem>
                                 <MenuDivider />
-                                <MenuItem onClick={() => router.push('/')}>Link 3</MenuItem>
+                                <MenuItem onClick={() => router.push('/')}>Sair</MenuItem>
                             </MenuList>
                         </Menu>
                     </Flex>

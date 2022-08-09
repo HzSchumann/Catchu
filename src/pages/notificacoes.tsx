@@ -1,7 +1,9 @@
-import { Heading, Flex, Avatar, Badge, Text, Box } from "@chakra-ui/react";
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Heading, Flex, Avatar, Spacer, Text, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Stack } from '@chakra-ui/react'
 import { Button, ButtonGroup, Center } from '@chakra-ui/react'
 import { LogedHeader } from "../components/logedHeader/index";
+import CardProposta from "../components/Notificacoes/cardProposta";
+import CardVizualizou from "../components/Notificacoes/cardVizualizou";
 
 
 export default function Notificacoes() {
@@ -15,63 +17,17 @@ export default function Notificacoes() {
                 templateRows='repeat(2, 1fr)'
                 templateColumns='repeat(5, 1fr)'
                 gap={4}
+                mt="2rem"
             >
-                <GridItem rowSpan={2} ml='2rem' mt='2rem' h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' >
+                <GridItem rowSpan={2} ml='2rem' h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' >
                     <Center>
                         <Heading text-align='center'>Suas Notificações</Heading>
                     </Center>
                 </GridItem>
 
                 <GridItem colSpan={4}>
-                    <Flex ml='2rem' mt='2rem' p="4" mr="4" boxShadow='xs' rounded='md' bg='white'>
-                        <Avatar src='https://bit.ly/sage-adebayo' />
-                        <Box ml='2rem' >
-                            <Text fontWeight='bold'>
-                                Segun Adebayo
-                                <Badge ml='1' colorScheme='green'>
-                                    New
-                                </Badge>
-                            </Text>
-                            <Text fontSize='sm'>UI Engineer</Text>
-                        </Box>
-                            <Button colorScheme='blue'>Ver proposta</Button>   
-                    </Flex>
-                    <Flex ml='2rem'  p="4" mr="4" border='1px' borderColor='gray.200' borderRadius="6px">
-                        <Avatar src='https://bit.ly/sage-adebayo' />
-                        <Box ml='2rem' >
-                            <Text fontWeight='bold'>
-                                Segun Adebayo
-                                <Badge ml='1' colorScheme='green'>
-                                    New
-                                </Badge>
-                            </Text>
-                            <Text fontSize='sm'>UI Engineer</Text>
-                        </Box>
-                    </Flex>
-                    <Flex ml='2rem'  p="4" mr="4" border='1px' borderColor='gray.200' borderRadius="6px">
-                        <Avatar src='https://bit.ly/sage-adebayo' />
-                        <Box ml='2rem' >
-                            <Text fontWeight='bold'>
-                                Segun Adebayo
-                                <Badge ml='1' colorScheme='green'>
-                                    New
-                                </Badge>
-                            </Text>
-                            <Text fontSize='sm'>UI Engineer</Text>
-                        </Box>
-                    </Flex>
-                    <Flex ml='2rem'  p="4" mr="4" border='1px' borderColor='gray.200' borderRadius="6px">
-                        <Avatar src='https://bit.ly/sage-adebayo' />
-                        <Box ml='2rem' >
-                            <Text fontWeight='bold'>
-                                Segun Adebayo
-                                <Badge ml='1' colorScheme='green'>
-                                    New
-                                </Badge>
-                            </Text>
-                            <Text fontSize='sm'>UI Engineer</Text>
-                        </Box>
-                    </Flex>
+                    <CardProposta></CardProposta>
+                    <CardVizualizou></CardVizualizou>
                 </GridItem>
             </Grid>
 
