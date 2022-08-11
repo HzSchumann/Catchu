@@ -1,5 +1,6 @@
 import { Flex, Avatar, Spacer, Text, Box, Heading } from "@chakra-ui/react";
 import { Button} from '@chakra-ui/react'
+import router from "../../../node_modules/next/router";
 
 
 
@@ -37,6 +38,7 @@ export default function CardRanking() {
                             _focus={{
                                 bg: 'bluePrimary.600',
                             }}
+                            onClick={() => router.push('/perfil-marca')}
                             >
                                 Ver perfil
                             </Button>

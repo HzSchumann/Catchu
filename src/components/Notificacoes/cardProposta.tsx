@@ -1,5 +1,6 @@
 import { Flex, Avatar, Spacer, Text, Box } from "@chakra-ui/react";
 import { Button} from '@chakra-ui/react'
+import router from "../../../node_modules/next/router";
 
 
 
@@ -7,8 +8,8 @@ export default function CardProposta() {
     return (
 
         <>   
-                    <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-                        <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' />
+                    <Flex ml='2rem' p="4"boxShadow='xs' rounded='md' bg='white'>
+                        <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')}/>
                         <Box ml='2rem'>
                             <Text fontWeight='bold'>
                                 Adidas

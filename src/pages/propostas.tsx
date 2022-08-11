@@ -3,6 +3,7 @@ import { Grid, GridItem } from '@chakra-ui/react'
 import { Button, ButtonGroup, Center } from '@chakra-ui/react'
 import { LogedHeader } from "../components/logedHeader/index";
 import CardProposta from "../components/Notificacoes/cardProposta";
+import CardPropostaEnviada from "../components/Propostas/cardPropostaEnviada";
 
 
 export default function Propostas() {
@@ -21,15 +22,19 @@ export default function Propostas() {
             >
                 <GridItem rowSpan={2}>
                     <Center  h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center'>
-                        <Heading >Suas Propostas</Heading>
+                        <Heading >Propostas</Heading>
                     </Center >
                 </GridItem>
 
                 <GridItem colSpan={4}>
                     <CardProposta></CardProposta>
+                    <CardPropostaEnviada></CardPropostaEnviada>
                     <CardProposta></CardProposta>
                     <CardProposta></CardProposta>
+                    <CardPropostaEnviada></CardPropostaEnviada>
                     <CardProposta></CardProposta>
+
+                    
                 </GridItem>
             </Grid>
 
