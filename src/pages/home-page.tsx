@@ -19,23 +19,18 @@ export default function HomePage() {
             <LogedHeader>
             </LogedHeader>
 
-            <Box p={4}>
+            <Box p="2rem">
                 <Carrossel>
                 </Carrossel>
 
-                <Text fontSize='2xl' font-weight="bolder">
+                <Heading fontSize={'3xl'} font-weight="bolder" mb="1rem">
                     Recomendações
-                </Text>
+                </Heading>
+
+                <CardPerfil>
+                </CardPerfil>
 
             </Box>
-            <CardPerfil>
-            </CardPerfil>
-
-            <CardPerfil>
-            </CardPerfil>
-
-            <CardPerfil>
-            </CardPerfil>
         </>
     );
 }

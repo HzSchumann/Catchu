@@ -13,7 +13,7 @@ import {
 
 export default function CardPerfil() {
     return (
-        <Center pr="2rem" pl="2rem" pb="1rem">
+        <Center pb="1rem">
             <Stack
                 borderWidth="1px"
                 borderRadius="lg"
@@ -88,7 +88,6 @@ export default function CardPerfil() {
                         <Button
                             flex={1}
                             fontSize={'sm'}
-                            rounded={'full'}
                             _focus={{
                                 bg: 'gray.200',
                             }}>
@@ -97,7 +96,6 @@ export default function CardPerfil() {
                         <Button
                             flex={1}
                             fontSize={'sm'}
-                            rounded={'full'}
                             bg={'bluePrimary.500'}
                             color={'white'}
                             boxShadow={
