@@ -10,10 +10,11 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
+import router from '../../../node_modules/next/router';
 
 export default function CardPerfil() {
     return (
-        <Center pr="2rem" pl="2rem" pb="1rem">
+        <Center pb="1rem">
             <Stack
                 borderWidth="1px"
                 borderRadius="lg"
@@ -25,6 +26,7 @@ export default function CardPerfil() {
                 padding={4}>
                 <Flex bg="gray">
                     <Image
+                        onClick={() => router.push('/perfil-marca')}
                         objectFit="cover"
                         boxSize="100%"
                         src={
@@ -86,18 +88,18 @@ export default function CardPerfil() {
                         direction={'row'}
                         >
                         <Button
+                            onClick={() => router.push('/perfil-marca')}
                             flex={1}
                             fontSize={'sm'}
-                            rounded={'full'}
                             _focus={{
                                 bg: 'gray.200',
                             }}>
                             Perfil
                         </Button>
                         <Button
+                            onClick={() => router.push('/propostas')}
                             flex={1}
                             fontSize={'sm'}
-                            rounded={'full'}
                             bg={'bluePrimary.500'}
                             color={'white'}
                             boxShadow={

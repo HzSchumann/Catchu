@@ -1,16 +1,22 @@
-import { Flex, Avatar, Spacer, Text, Box } from "@chakra-ui/react";
+import { Flex, Avatar, Spacer, Text, Box, Heading } from "@chakra-ui/react";
 import { Button} from '@chakra-ui/react'
 import router from "../../../node_modules/next/router";
 
 
 
-export default function CardProposta() {
+export default function CardRanking() {
+    var ranking = 1
     return (
 
         <>   
-                    <Flex ml='2rem' p="4"boxShadow='xs' rounded='md' bg='white'>
-                        <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')}/>
-                        <Box ml='2rem'>
+                    <Flex ml='2rem' p="4" mr="4" boxShadow='xs' rounded='md' bg='white' display="flex" align-items="center">
+                        <Box mr='2rem' mt="8px" >
+                            <Heading fontSize={'2xl'}>
+                                {ranking}
+                            </Heading>
+                        </Box>
+                        <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' />
+                        <Box ml='1rem'>
                             <Text fontWeight='bold'>
                                 Adidas
                             </Text>
@@ -32,8 +38,9 @@ export default function CardProposta() {
                             _focus={{
                                 bg: 'bluePrimary.600',
                             }}
+                            onClick={() => router.push('/perfil-marca')}
                             >
-                                Ver proposta
+                                Ver perfil
                             </Button>
                         </Box>
                     </Flex>

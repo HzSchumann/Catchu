@@ -3,7 +3,7 @@ import {
     Flex,
     Avatar,
     HStack,
-    Link,
+    Icon,
     IconButton,
     Button,
     Menu,
@@ -14,27 +14,13 @@ import {
     useDisclosure,
     useColorModeValue,
     Stack,
+    Image,
 
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { HamburgerIcon, CloseIcon, BellIcon, CopyIcon, DragHandleIcon } from '@chakra-ui/icons';
-import { ReactNode } from 'react';
+import { BellIcon, CopyIcon, DragHandleIcon } from '@chakra-ui/icons';
+import { AiOutlineTrophy, AiOutlineFileDone, AiOutlineBell } from "react-icons/ai";
 
-const Links = ['Dashboard', 'Projects', 'Notificações'];
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-    <Link
-        px={2}
-        py={1}
-        rounded={'md'}
-        _hover={{
-            textDecoration: 'none',
-            bg: useColorModeValue('gray.200', 'gray.700'),
-        }}
-        href={'#'}>
-        {children}
-    </Link>
-);
 
 export function LogedHeader() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,50 +30,45 @@ export function LogedHeader() {
 
     return (
         <>
-            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+            <Box 
+                bg={useColorModeValue('white', 'gray.800')}
+                px={4} h="60px" borderBottom={1}
+                borderStyle={'solid'}
+                borderColor={useColorModeValue('gray.200', 'gray.900')}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    <IconButton
-                        size={'md'}
-                        icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                        aria-label={'Open Menu'}
-                        display={{ md: 'none' }}
-                        onClick={isOpen ? onClose : onOpen}
-                    />
                     <HStack spacing={8} alignItems={'center'}>
-                        <Box cursor='pointer' onClick={() => router.push('/home-page')}>Catch u.</Box>
-                        <HStack
-                            as={'nav'}
-                            spacing={4}
-                            display={{ base: 'none', md: 'flex' }}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
-                        </HStack>
+                        <Box ml="1rem" mt="2px" cursor='pointer' onClick={() => router.push('/home-page')}>
+                            <Image src="/images/Catchu.svg" h="1rem"></Image>
+                        </Box>
+                        
                     </HStack>
                     <Flex alignItems={'center'}>
                         <IconButton
                             size={'lg'}
                             mr='1rem'
-                            icon={<DragHandleIcon />}
                             aria-label={'Ranking'}
                             onClick={() => router.push('/ranking')}
-                        />
+                        >
+                            <Icon as={AiOutlineTrophy}></Icon>
+                        </IconButton>
 
                         <IconButton
                             size={'lg'}
                             mr='1rem'
-                            icon={<CopyIcon />}
                             aria-label={'Propostas'}
                             onClick={() => router.push('/propostas')}
-                        />
+                        >
+                            <Icon as={AiOutlineFileDone}></Icon>
+                        </IconButton>
 
                         <IconButton
                             size={'lg'}
                             mr='1rem'
-                            icon={<BellIcon />}
                             aria-label={'Notificações'}
                             onClick={() => router.push('/notificacoes')}
-                        />
+                        >
+                            <Icon as={AiOutlineBell}></Icon>
+                        </IconButton>
 
                         <Menu>
                             <MenuButton
@@ -97,6 +78,7 @@ export function LogedHeader() {
                                 cursor={'pointer'}
                                 minW={0}>
                                 <Avatar
+                                    mr="1rem"
                                     size={'sm'}
                                     src={
                                         'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
@@ -120,16 +102,6 @@ export function LogedHeader() {
                         </Menu>
                     </Flex>
                 </Flex>
-
-                {isOpen ? (
-                    <Box pb={4} display={{ md: 'none' }}>
-                        <Stack as={'nav'} spacing={4}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
-                        </Stack>
-                    </Box>
-                ) : null}
             </Box>
         </>
     );

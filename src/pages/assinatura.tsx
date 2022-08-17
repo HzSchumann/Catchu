@@ -32,13 +32,7 @@ const PackageTier = ({
     title,
     options,
     typePlan,
-    checked = false,
 }: PackageTierProps) => {
-    const colorTextLight = checked ? 'white' : 'purple.600';
-    const bgColorLight = checked ? 'purple.400' : 'gray.300';
-
-    const colorTextDark = checked ? 'white' : 'purple.500';
-    const bgColorDark = checked ? 'purple.400' : 'gray.300';
 
     return (
         <>
@@ -67,8 +61,18 @@ const PackageTier = ({
                 <Stack>
                     <Button
                         size="md"
-                        color={useColorModeValue(colorTextLight, colorTextDark)}
-                        bgColor={useColorModeValue(bgColorLight, bgColorDark)}>
+                        bg={'bluePrimary.500'} 
+                            color={'white'}
+                            boxShadow={
+                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                            }
+                            _hover={{
+                                bg: 'bluePrimary.600',
+                            }}
+                            _focus={{
+                                bg: 'bluePrimary.600',
+                            }}
+                        >
                         Iniciar
                     </Button>
                 </Stack>
@@ -100,7 +104,7 @@ const ThreeTierPricingHorizontal = () => {
                             }}
                             textAlign={'center'}>
                             <Heading size={'lg'}>
-                                Faça novas conexões para seu <Text color="purple.400">Sucesso</Text>
+                                Faça novas conexões para seu <Text color="bluePrimary.500">Sucesso</Text>
                             </Heading>
                         </Stack>
                         <Stack

@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import { Flex, Text, ButtonGroup, Button, Box, useColorModeValue, IconButton, useDisclosure, useBreakpointValue, Stack, PopoverTrigger, Popover, PopoverContent, Link, Icon, Collapse } from '@chakra-ui/react'
+import { Flex, Text, Image, Button, Box, useColorModeValue, IconButton, useDisclosure, useBreakpointValue, Stack, PopoverTrigger, Popover, PopoverContent, Link, Icon, Collapse } from '@chakra-ui/react'
 
 import { useRouter } from 'next/router';
 
@@ -42,12 +42,9 @@ export function Header() {
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Text
-                        textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                        fontFamily={'heading'}
-                        color={useColorModeValue('gray.800', 'white')}>
-                        Catch u.
-                    </Text>
+                    <Box mt="3px" ml="1rem" cursor='pointer' onClick={() => router.push('/')}>
+                        <Image src="/images/Catchu.svg" h="1rem"></Image>
+                    </Box>
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
