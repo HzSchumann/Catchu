@@ -21,11 +21,35 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Header } from '../components/Header/index';
+import userModel from "../Model/userModel";
+import auth from '../config/firebaseconfig';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Cadastro() {
     const [showPassword, setShowPassword] = useState(false);
     const [value, setValue] = React.useState('1')
     const router = useRouter();
+
+    function addUser(){
+        let UserModel = userModel();
+        UserModel.email = document.getElementById("email").value;
+        UserModel.password = document.getElementById("password").value;
+
+        createUserWithEmailAndPassword(auth, UserModel.email, UserModel.password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            router.push('/home-page');
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            //router.push('/home-page');
+            // ..
+          });
+    }
 
     return (
         <>
@@ -64,12 +88,12 @@ export default function Cadastro() {
 
                             <FormControl id="email" isRequired>
                                 <FormLabel>Email</FormLabel>
-                                <Input type="email" />
+                                <Input type="email" id="email"/>
                             </FormControl>
                             <FormControl id="password" isRequired>
                                 <FormLabel>Senha</FormLabel>
                                 <InputGroup>
-                                    <Input type={showPassword ? 'text' : 'password'} />
+                                    <Input type={showPassword ? 'text' : 'password'} id="password"/>
                                     <InputRightElement h={'full'}>
                                         <Button
                                             variant={'ghost'}
@@ -93,7 +117,10 @@ export default function Cadastro() {
                                     size="lg"
                                     bg={'blue.400'}
                                     color={'white'}
-                                    onClick={() => router.push('/home-page')}
+                                    onClick={() => addUser()}
+                                    onPress={() => {
+                                        addUser()
+                                    }}
                                     _hover={{
                                         bg: 'blue.500',
                                         
