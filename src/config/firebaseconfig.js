@@ -9,7 +9,8 @@ import {
 } from 'firebase/firestore'
 import {
     getAuth,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from 'firebase/auth'
 import { sign } from 'crypto'
 
