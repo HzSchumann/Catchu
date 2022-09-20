@@ -18,6 +18,7 @@ import { Header } from '../components/Header/index';
 import auth from '../config/firebaseconfig';
 import userModel from "../Model/userModel";
 import { signInWithEmailAndPassword } from "firebase/auth";
+export var idUser;
 export default function Login() {
 var erro;
 var idUser;
@@ -34,7 +35,7 @@ var nomeUser;
             router.push('/home-page');
             idUser = user.id;
             nomeUser = user.displayName;
-            preencherDados(user.id, user.displayName);
+            preencherDados(user.id);
             console.log(user.uid);
           })
           .catch((error) => {
@@ -114,6 +115,7 @@ var nomeUser;
     );
 }
 
-export function preencherDados(uidUsuario, nomeUser){
-    return preencherDados;
+export function preencherDados(uidUsuario){
+    idUser = uidUsuario
+    console.log(uidUsuario);
 }

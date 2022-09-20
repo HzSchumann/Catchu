@@ -43,10 +43,8 @@ export default function Cadastro() {
             router.push('/home-page');
             console.log(user.uid);
             console.log(user);
-            //sendEmailVerification(userCredential.user);
-            // ...
-          })
-          .catch((error) => {
+        })
+        .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
@@ -60,7 +58,7 @@ export default function Cadastro() {
             console.log(erro);
             //router.push('/home-page');
             // ..
-          });
+        });
     }
 
     return (

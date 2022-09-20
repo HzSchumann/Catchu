@@ -9,6 +9,9 @@ import Carrossel from '../components/Carrossel/index';
 
 import { LogedHeader } from '../components/logedHeader/index';
 import { preencherDados } from "../pages/login";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import idUser from '../pages/login';
+
 
 
 
@@ -20,7 +23,7 @@ export default function HomePage() {
         <>
             <LogedHeader>
             </LogedHeader>
-            <h6>teste</h6>
+            <h6 id='message1' ></h6>
             <Box p="2rem">
                 <Carrossel>
                 </Carrossel>

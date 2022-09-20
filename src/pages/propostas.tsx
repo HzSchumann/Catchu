@@ -1,12 +1,18 @@
-import { Heading, Flex, Avatar, Badge, Text, Box } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { Grid, GridItem } from '@chakra-ui/react'
-import { Button, ButtonGroup, Center } from '@chakra-ui/react'
+import { Button, Center } from '@chakra-ui/react'
 import { LogedHeader } from "../components/logedHeader/index";
 import CardProposta from "../components/Notificacoes/cardProposta";
 import CardPropostaEnviada from "../components/Propostas/cardPropostaEnviada";
-
-
+import { useRouter } from 'next/router';
 export default function Propostas() {
+    
+const router = useRouter();
+    function adicionarProposta(){
+        
+        router.push('/adicionarProposta');
+    }
+
     return (
 
         <>
@@ -36,7 +42,28 @@ export default function Propostas() {
 
                     
                 </GridItem>
+                <Button
+                            bg={'bluePrimary.500'} 
+                            color={'white'}
+                            boxShadow={
+                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                            }
+                            _hover={{
+                                bg: 'bluePrimary.600',
+                            }}
+                            _focus={{
+                                bg: 'bluePrimary.600',
+                            }}
+                            onClick={() => adicionarProposta()}
+                                    onPress={() => {
+                                        adicionarProposta()
+                                    }}
+                            >
+                                Adicionar Proposta
+                            </Button>
             </Grid>
+
+            
 
         </>
     )
