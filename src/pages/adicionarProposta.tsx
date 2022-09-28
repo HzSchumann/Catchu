@@ -1,28 +1,18 @@
-import { Heading, Flex, Avatar, Badge, Text, Box } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { Grid, GridItem } from '@chakra-ui/react'
-import { Button, ButtonGroup, Center } from '@chakra-ui/react'
+import { Button, Center } from '@chakra-ui/react'
 import { LogedHeader } from "../components/logedHeader/index";
-import CardProposta from "../components/Notificacoes/cardProposta";
-import CardPropostaEnviada from "../components/Propostas/cardPropostaEnviada";
 import PropostaModel from "../Model/PropostaModel";
 import { doc, setDoc } from "firebase/firestore";
 import db from '../config/firebase';
 import {
     FormControl,
     FormLabel,
-    Input,
-    InputGroup,
-    HStack,
-    InputRightElement,
-    Stack,
-    useColorModeValue,
-    Link,
-    Radio,
-    RadioGroup,
+    Input
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
-export default function Propostas() {
+export default function AdicionarPropostas() {
     const router = useRouter();
 
     async function adicionarProposta(){
@@ -32,13 +22,15 @@ export default function Propostas() {
         propostaModel.name = document.getElementById("userName").value;
         propostaModel.setorAtuacao = document.getElementById("setor").value;
         propostaModel.veiculoMidiaticoPrincipal = document.getElementById("veiculo").value;
+        propostaModel.usuarioPlataforma = document.getElementById("usuario").value;
 
         const docData = {
             descricao: propostaModel.descricao,
             empresa: propostaModel.empresa,
             setorAtuacao: propostaModel.setorAtuacao,
             midia: propostaModel.veiculoMidiaticoPrincipal,
-            name: propostaModel.name
+            name: propostaModel.name,
+            usuario: propostaModel.usuarioPlataforma
         };
 
         await setDoc(doc(db, "Proposta", `Empresa ${propostaModel.empresa}`), docData);
@@ -104,7 +96,14 @@ export default function Propostas() {
                             _placeholder={{ color: 'gray.500' }}
                             type="text" />
                     </FormControl>
-                    
+                    <br/>
+                    <FormControl id="usuario">
+                        <FormLabel>Seu nome de usuário na plataforma</FormLabel>
+                        <Input
+                            placeholder="Informe o seu usuário na rede social"
+                            _placeholder={{ color: 'gray.500' }}
+                            type="text" />
+                    </FormControl>
                 </GridItem>
                 <Button
                             bg={'bluePrimary.500'} 

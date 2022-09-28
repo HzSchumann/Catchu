@@ -9,6 +9,7 @@ function generatePropostaModel() {
         setorAtuacao: '',
         veiculoMidiaticoPrincipal: '',
         empresa: '',
+        usuarioPlataforma: '',
     }
 
     return propostaModel;
