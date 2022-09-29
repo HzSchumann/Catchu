@@ -8,17 +8,22 @@ import CardPerfil from '../components/Card/card';
 import Carrossel from '../components/Carrossel/index';
 
 import { LogedHeader } from '../components/logedHeader/index';
+import { preencherDados } from "../pages/login";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import idUser from '../pages/login';
+
+
 
 
 
 export default function HomePage() {
 
-
+    console.log('teste ' + preencherDados.idUser);
     return (
         <>
             <LogedHeader>
             </LogedHeader>
-
+            <h6 id='message1' ></h6>
             <Box p="2rem">
                 <Carrossel>
                 </Carrossel>

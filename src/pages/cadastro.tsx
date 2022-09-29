@@ -23,7 +23,8 @@ import { useRouter } from 'next/router';
 import { Header } from '../components/Header/index';
 import userModel from "../Model/userModel";
 import auth from '../config/firebaseconfig';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+var erro = "";
 
 export default function Cadastro() {
     const [showPassword, setShowPassword] = useState(false);
@@ -37,18 +38,27 @@ export default function Cadastro() {
 
         createUserWithEmailAndPassword(auth, UserModel.email, UserModel.password)
         .then((userCredential) => {
-            // Signed in
             const user = userCredential.user;
+            user.displayName = document.getElementById("name").value
             router.push('/home-page');
-            // ...
-          })
-          .catch((error) => {
+            console.log(user.uid);
+            console.log(user);
+        })
+        .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
+            if(errorMessage == 'Firebase: Error (auth/email-already-in-use).'){
+                document.getElementById("testeErro").innerHTML = "Este E-mail já está sendo usado!!";
+                console.log(erro);
+            }
+            if(errorMessage == 'Firebase: Password should be at least 6 characters (auth/weak-password).'){
+                document.getElementById("testeErro").innerHTML = "É necessário que a senha tenha pelo menos 6 caracteres";
+            }
+            console.log(erro);
             //router.push('/home-page');
             // ..
-          });
+        });
     }
 
     return (
@@ -82,7 +92,7 @@ export default function Cadastro() {
 
                             <FormControl id="firstName" isRequired>
                                 <FormLabel>Nome</FormLabel>
-                                <Input type="text" />
+                                <Input type="text" id="name"/>
                             </FormControl>
 
 
@@ -127,6 +137,7 @@ export default function Cadastro() {
                                     }}>
                                     Cadastrar
                                 </Button>
+                                <h5 style={{color: 'red'}} id='testeErro' ></h5>
                             </Stack>
                             <Stack pt={6}>
                                 <Text align={'center'}>
@@ -138,4 +149,8 @@ export default function Cadastro() {
                 </Stack>
             </Flex></>
     );
+}
+
+function preencherDados(uidUsuario, nomeUser){
+    return preencherDados;
 }

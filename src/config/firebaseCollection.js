@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import { getAnalytics } from "firebase/analytics";
 import {
     getFirestore, collection, onSnapshot,
-    addDoc, deleteDoc, doc,
+    addDoc, deleteDoc, doc, setDoc,
     query, where,
     orderBy, serverTimestamp,
     getDoc, updateDoc
@@ -27,8 +27,8 @@ firebase.initializeApp(firebaseConfig);
 
 const tenantId = "TENANT_ID1";
 
-const db = getFirestore()
-const auth = getAuth()
+//const db = getFirestore()
+const db = collection()
 //auth.tenantId = tenantId;
 //const database = firebase.firestore();
-export default auth;
+export default db;
