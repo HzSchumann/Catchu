@@ -24,13 +24,14 @@ export default function CardPerfil() {
                 bg={useColorModeValue('white', 'gray.900')}
                 boxShadow={'2xl'}
                 padding={4}>
-                <Flex bg="gray">
+                <Flex bg="gray" borderRadius="lg">
                     <Image
+                        
                         onClick={() => router.push('/perfil-marca')}
                         objectFit="cover"
                         boxSize="100%"
                         src={
-                            'https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg'
+                            '/images/SportStore.png'
                         }
                     />
                 </Flex>
@@ -42,15 +43,15 @@ export default function CardPerfil() {
                     p={1}
                     pt={2}>
                     <Heading fontSize={'2xl'} fontFamily={'body'}>
-                        Adidas
+                        SportStore
                     </Heading>
                     <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-                        @adidas
+                        @sportstore
                     </Text>
                     <Text
                         textAlign={'left'}
                         color={useColorModeValue('gray.700', 'gray.400')}>
-                        Na Adidas Brasil, você vai encontrar tênis, roupas esportivas e material esportivo criados com tecnologaa e design.
+                        A SportStore nasceu para facilitar a vidas das pessoas por meio de acessórios funcionais e tecnológicos.
                     </Text>
                     <Stack align={'center'} justify={'left'} direction={'row'} mt={6}>
                         <Badge
@@ -72,7 +73,7 @@ export default function CardPerfil() {
                             py={1}
                             bg={useColorModeValue('gray.50', 'gray.800')}
                             fontWeight={'400'}>
-                            #Futebol
+                            #Performance
                         </Badge>
                     </Stack>
 

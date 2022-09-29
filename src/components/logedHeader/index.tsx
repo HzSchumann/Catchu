@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { BellIcon, CopyIcon, DragHandleIcon } from '@chakra-ui/icons';
-import { AiOutlineTrophy, AiOutlineFileDone, AiOutlineBell } from "react-icons/ai";
+import { AiOutlinePlayCircle, AiOutlineFileDone, AiOutlineBell } from "react-icons/ai";
 
 
 export function LogedHeader() {
@@ -49,7 +49,7 @@ export function LogedHeader() {
                             aria-label={'Ranking'}
                             onClick={() => router.push('/ranking')}
                         >
-                            <Icon as={AiOutlineTrophy}></Icon>
+                            <Icon as={AiOutlinePlayCircle}></Icon>
                         </IconButton>
 
                         <IconButton
@@ -81,11 +81,16 @@ export function LogedHeader() {
                                     mr="1rem"
                                     size={'sm'}
                                     src={
-                                        'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                                        'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                                     }
                                 />
                             </MenuButton>
                             <MenuList>
+                                <MenuItem
+                                    onClick={() => router.push('/meu-perfil')}
+                                >
+                                    Perfil
+                                </MenuItem>
                                 <MenuItem
                                     onClick={() => router.push('/perfil')}
                                 >

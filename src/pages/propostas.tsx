@@ -87,9 +87,29 @@ export default function Propostas() {
                 mt='2rem'
             >
                 <GridItem rowSpan={2}>
-                    <Center  h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center' >
+                    <Center  h='200px' width='100%' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center' >
                         <Heading >Propostas</Heading>
                     </Center >
+                    <Button
+                        flex={1}
+                        width={'100%'}
+                        mt={'2rem'}
+                        bg={'bluePrimary.500'} 
+                        color={'white'}
+                        boxShadow={
+                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                        }
+                        _hover={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        _focus={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        onClick={() => window.location.href = 'adicionarProposta'}
+                        
+                        >
+                            Adicionar Proposta
+                    </Button>
                 </GridItem>
                 <GridItem colSpan={4}>
                 {allCampaigns.map((proposta)=> <Item key={proposta.id} proposta={proposta}/>)}
@@ -99,23 +119,7 @@ export default function Propostas() {
 
                     
                 </GridItem>
-                <Button
-                            bg={'bluePrimary.500'} 
-                            color={'white'}
-                            boxShadow={
-                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                            }
-                            _hover={{
-                                bg: 'bluePrimary.600',
-                            }}
-                            _focus={{
-                                bg: 'bluePrimary.600',
-                            }}
-                            onClick={() => adicionarProposta()}
-                            
-                            >
-                                Adicionar Proposta
-                            </Button>
+                
             </Grid>
 
             

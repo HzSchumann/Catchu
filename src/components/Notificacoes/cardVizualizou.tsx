@@ -8,12 +8,12 @@ export default function CardVizualizou() {
 
         <>   
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-                        <Avatar src='https://seeklogo.com/images/C/Coca-Cola-logo-56985C1769-seeklogo.com.png' />
+                        <Avatar src='/images/streetart.png' />
                         <Box ml='2rem'>
                             <Text fontWeight='bold'>
-                                Coca-Cola
+                                Street Art
                             </Text>
-                            <Text fontSize='sm'>@cocacola</Text>
+                            <Text fontSize='sm'>@streetart</Text>
                         </Box>
                         <Box>
                         <Text fontWeight='bold' ml='2rem' mt="8px" color="bluePrimary.500">

@@ -104,26 +104,28 @@ export default function AdicionarPropostas() {
                             _placeholder={{ color: 'gray.500' }}
                             type="text" />
                     </FormControl>
+                    <Button
+                        w={'100%'}
+                        mt={'2rem'}
+                        bg={'bluePrimary.500'} 
+                        color={'white'}
+                        boxShadow={
+                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                        }
+                        _hover={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        _focus={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        onClick={() => adicionarProposta()}
+                                onPress={() => {
+                                    adicionarProposta()
+                                }}
+                        >
+                            Salvar Proposta
+                    </Button>
                 </GridItem>
-                <Button
-                            bg={'bluePrimary.500'} 
-                            color={'white'}
-                            boxShadow={
-                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                            }
-                            _hover={{
-                                bg: 'bluePrimary.600',
-                            }}
-                            _focus={{
-                                bg: 'bluePrimary.600',
-                            }}
-                            onClick={() => adicionarProposta()}
-                                    onPress={() => {
-                                        adicionarProposta()
-                                    }}
-                            >
-                                Salvar Proposta
-                            </Button>
             </Grid>
 
             

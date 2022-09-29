@@ -9,12 +9,12 @@ export default function CardProposta() {
 
         <>   
                     <Flex ml='2rem' p="4"boxShadow='xs' rounded='md' bg='white'>
-                        <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')}/>
+                        <Avatar src='/images/SportStore.png' onClick={() => router.push('/perfil-marca')}/>
                         <Box ml='2rem'>
                             <Text fontWeight='bold'>
-                                Adidas
+                                SportStore
                             </Text>
-                            <Text fontSize='sm'>@adidas</Text>
+                            <Text fontSize='sm'>@sportstore</Text>
                         </Box>
                         <Spacer />
                         <Box
