@@ -63,6 +63,8 @@ export default function Propostas() {
                                 _focus={{
                                     bg: 'bluePrimary.600',
                                 }}
+                                onClick={() => router.push('/descricaoProposta?idproposta='+props.proposta.id+'&nome='+props.proposta.name+'&empresa='+props.proposta.empresa+'&descricao='+props.proposta.descricao+'&midia='+props.proposta.midia+'&setor='+props.proposta.setorAtuacao+'&usuario='+props.proposta.usuario)
+                                        }
                                 >
                                     Ver proposta
                                 </Button>
