@@ -33,7 +33,7 @@ export default function Propostas() {
             >
                 <GridItem rowSpan={2}>
                     <Center h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center'>
-                        <Heading >Ranking</Heading>
+                        <Heading >Aprenda</Heading>
                     </Center >
                 </GridItem>
 
@@ -48,14 +48,14 @@ export default function Propostas() {
                         bg={useColorModeValue('white', 'gray.900')}
                         boxShadow={'2xl'}
                         padding={4}>
-                        <Flex bg="gray" borderRadius="lg">
+                        <Flex bg="gray" borderRadius="lg"  w='250px'>
                             <Image
-                                
+                                borderRadius="lg"
                                 onClick={() => router.push('/perfil-marca')}
                                 objectFit="cover"
                                 boxSize="100%"
                                 src={
-                                    '/images/SportStore.png'
+                                    'https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                                 }
                             />
                         </Flex>
@@ -67,40 +67,13 @@ export default function Propostas() {
                             p={1}
                             pt={2}>
                             <Heading fontSize={'2xl'} fontFamily={'body'}>
-                                SportStore
+                                Fechando Parceria com Contrato
                             </Heading>
-                            <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-                                @sportstore
-                            </Text>
                             <Text
                                 textAlign={'left'}
                                 color={useColorModeValue('gray.700', 'gray.400')}>
-                                A SportStore nasceu para facilitar a vidas das pessoas por meio de acessórios funcionais e tecnológicos.
+                                Saiba quando é um contrato justo para ambas as partes.
                             </Text>
-                            <Stack align={'center'} justify={'left'} direction={'row'} mt={6}>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Estilo
-                                </Badge>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Esporte
-                                </Badge>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Performance
-                                </Badge>
-                            </Stack>
-
                         </Stack>
                         <Stack
                         alignItems={'center'}
@@ -113,16 +86,7 @@ export default function Propostas() {
                                 direction={'row'}
                                 >
                                 <Button
-                                    onClick={() => router.push('/perfil-marca')}
-                                    flex={1}
-                                    fontSize={'sm'}
-                                    _focus={{
-                                        bg: 'gray.200',
-                                    }}>
-                                    Perfil
-                                </Button>
-                                <Button
-                                    onClick={() => router.push('/propostas')}
+                                    onClick={() => router.push('/contract-course')}
                                     flex={1}
                                     fontSize={'sm'}
                                     bg={'bluePrimary.500'}
@@ -136,7 +100,7 @@ export default function Propostas() {
                                     _focus={{
                                         bg: 'bluePrimary.600',
                                     }}>
-                                    Enviar Proposta
+                                    Acessar Conteúdo
                                 </Button>
                             </Stack>
                         </Stack>
@@ -156,14 +120,14 @@ export default function Propostas() {
                         bg={useColorModeValue('white', 'gray.900')}
                         boxShadow={'2xl'}
                         padding={4}>
-                        <Flex bg="gray" borderRadius="lg">
+                        <Flex bg="gray" borderRadius="lg" w='250px'>
                             <Image
-                                
+                                borderRadius="lg"
                                 onClick={() => router.push('/perfil-marca')}
                                 objectFit="cover"
                                 boxSize="100%"
                                 src={
-                                    '/images/SportStore.png'
+                                    'https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                                 }
                             />
                         </Flex>
@@ -175,40 +139,13 @@ export default function Propostas() {
                             p={1}
                             pt={2}>
                             <Heading fontSize={'2xl'} fontFamily={'body'}>
-                                SportStore
+                                Alavancando os Números nas Redes Sociais
                             </Heading>
-                            <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-                                @sportstore
-                            </Text>
                             <Text
                                 textAlign={'left'}
                                 color={useColorModeValue('gray.700', 'gray.400')}>
-                                A SportStore nasceu para facilitar a vidas das pessoas por meio de acessórios funcionais e tecnológicos.
+                                Aprenda algumas práticas para alavancar seus números nas principais redes sociais.
                             </Text>
-                            <Stack align={'center'} justify={'left'} direction={'row'} mt={6}>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Estilo
-                                </Badge>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Esporte
-                                </Badge>
-                                <Badge
-                                    px={2}
-                                    py={1}
-                                    bg={useColorModeValue('gray.50', 'gray.800')}
-                                    fontWeight={'400'}>
-                                    #Performance
-                                </Badge>
-                            </Stack>
-
                         </Stack>
                         <Stack
                         alignItems={'center'}
@@ -221,16 +158,7 @@ export default function Propostas() {
                                 direction={'row'}
                                 >
                                 <Button
-                                    onClick={() => router.push('/perfil-marca')}
-                                    flex={1}
-                                    fontSize={'sm'}
-                                    _focus={{
-                                        bg: 'gray.200',
-                                    }}>
-                                    Perfil
-                                </Button>
-                                <Button
-                                    onClick={() => router.push('/propostas')}
+                                    onClick={() => router.push('/numeros-course')}
                                     flex={1}
                                     fontSize={'sm'}
                                     bg={'bluePrimary.500'}
@@ -244,7 +172,7 @@ export default function Propostas() {
                                     _focus={{
                                         bg: 'bluePrimary.600',
                                     }}>
-                                    Enviar Proposta
+                                    Acessar Conteúdo
                                 </Button>
                             </Stack>
                         </Stack>
