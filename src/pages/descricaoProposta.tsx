@@ -3,7 +3,7 @@ import { Grid, GridItem } from '@chakra-ui/react'
 import { Button, Center } from '@chakra-ui/react'
 import { LogedHeader } from "../components/logedHeader/index";
 import PropostaModel from "../Model/PropostaModel";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, deleteDoc, getFirestore } from "firebase/firestore";
 import db from '../config/firebase';
 import { useState, useEffect } from 'react';
 import { collection, query, where, onSnapshot } from "firebase/firestore";
@@ -32,8 +32,24 @@ export default function DescricaoProposta({ navigation }) {
     const setU = new URLSearchParams(window.location.search).get("setor");
     const midiaU = new URLSearchParams(window.location.search).get("midia");
     const usuarioU = new URLSearchParams(window.location.search).get("usuario");
+    const idPropostaU = new URLSearchParams(window.location.search).get("idproposta");
 
     async function adicionarProposta(){
+        router.push('/propostas');
+    }
+
+    function deleteCampaign() {
+        
+
+        const docRef = doc(db, "Proposta", idPropostaU);
+
+        deleteDoc(docRef)
+        .then(() => {
+            console.log("Entire Document has been deleted successfully.")
+        })
+        .catch(error => {
+            console.log(error);
+        })
         router.push('/propostas');
     }
 
@@ -61,32 +77,32 @@ export default function DescricaoProposta({ navigation }) {
 
                 <GridItem colSpan={4}>
                 <FormControl id="userName">
-                        <FormLabel id='nome' >{nomeU} </FormLabel>
+                        <FormLabel id='nome' >Nome: {nomeU} </FormLabel>
                         
                     </FormControl>
                     <br/>
                 <FormControl id="empresaName">
-                        <FormLabel id='empresaNome'>{empresaU}</FormLabel>
+                        <FormLabel id='empresaNome'>Empresa: {empresaU}</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="desc">
-                        <FormLabel id='descri'>{desU}</FormLabel>
+                        <FormLabel id='descri'>Descrição: {desU}</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="setor">
-                        <FormLabel id='setorAt'>{setU}o</FormLabel>
+                        <FormLabel id='setorAt'>Setor de Atuação: {setU}o</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="veiculo">
-                        <FormLabel id='veiculoMidia'>{midiaU}</FormLabel>
+                        <FormLabel id='veiculoMidia'>Plataforma de divulgação: {midiaU}</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="usuario">
-                        <FormLabel id='user'>Seu nome de usuário na plataforma {usuarioU}</FormLabel>
+                        <FormLabel id='user'>nome de usuário na plataforma: {usuarioU}</FormLabel>
                        
                     </FormControl>
                 </GridItem>
@@ -122,7 +138,7 @@ export default function DescricaoProposta({ navigation }) {
                                 _focus={{
                                     bg: 'red.600',
                                 }}
-                               
+                                onClick={() => deleteCampaign()}
                                 >
                                     Deletar
                                 </Button>

@@ -91,22 +91,22 @@ export default function DescricaoProposta({ navigation }) {
 
                 <GridItem colSpan={4}>
                 <FormControl id="empresaName">
-                        <FormLabel id='empresaNome'>{empresaU}</FormLabel>
+                        <FormLabel id='empresaNome'>Nome da Empresa: {empresaU}</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="desc">
-                        <FormLabel id='descri'>{desU}</FormLabel>
+                        <FormLabel id='descri'>Descrição: {desU}</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="setor">
-                        <FormLabel id='setorAt'>{setU}o</FormLabel>
+                        <FormLabel id='setorAt'>Setor de atuação: {setU}o</FormLabel>
                         
                     </FormControl>
                     <br/>
                     <FormControl id="usuario">
-                        <FormLabel id='user'>Seu nome de usuário na plataforma {usuarioU}</FormLabel>
+                        <FormLabel id='user'>Nome de usuário na plataforma {usuarioU}</FormLabel>
                        
                     </FormControl>
                     <br/>
