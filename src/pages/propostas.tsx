@@ -37,39 +37,64 @@ export default function Propostas() {
     function Item(props){
         return(
             
+                
+                    <><Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
+                <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')} />
+                <Box ml='2rem'>
 
-                    <Flex ml='2rem' p="4"boxShadow='xs' rounded='md' bg='white' >
-                            <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')}/>
-                            <Box ml='2rem'>
-                                
-                                <Text fontWeight='bold' id='empre'>
-                                {props.proposta.name}
-                                </Text>
-                                <Text fontSize='sm'>@{props.proposta.usuario}</Text>
-                            </Box>
-                            <Spacer />
-                            <Box
-                            ml='2rem' display="flex" float="right"
-                            >
-                                <Button
-                                bg={'bluePrimary.500'} 
-                                color={'white'}
-                                boxShadow={
-                                    '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                                }
-                                _hover={{
-                                    bg: 'bluePrimary.600',
-                                }}
-                                _focus={{
-                                    bg: 'bluePrimary.600',
-                                }}
-                                onClick={() => router.push('/descricaoProposta?idproposta='+props.proposta.id+'&nome='+props.proposta.name+'&empresa='+props.proposta.empresa+'&descricao='+props.proposta.descricao+'&midia='+props.proposta.midia+'&setor='+props.proposta.setorAtuacao+'&usuario='+props.proposta.usuario)
-                                        }
-                                >
-                                    Ver proposta
-                                </Button>
-                            </Box>
-                        </Flex>
+                    <Text fontWeight='bold' id='empre'>
+                        {props.proposta.name}
+                    </Text>
+                    <Text fontSize='sm'>@{props.proposta.usuario}</Text>
+                </Box>
+                <Spacer />
+                <Box
+                    ml='2rem' display="flex" float="right"
+                >
+                    <Button
+                        bg={'bluePrimary.500'}
+                        color={'white'}
+                        boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'}
+                        _hover={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        _focus={{
+                            bg: 'bluePrimary.600',
+                        }}
+                        onClick={() => router.push('/descricaoProposta?idproposta=' + props.proposta.id + '&nome=' + props.proposta.name + '&empresa=' + props.proposta.empresa + '&descricao=' + props.proposta.descricao + '&midia=' + props.proposta.midia + '&setor=' + props.proposta.setorAtuacao + '&usuario=' + props.proposta.usuario)}
+                    >
+                        Ver proposta
+                    </Button>
+                </Box>
+            </Flex><Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
+                    <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')} />
+                    <Box ml='2rem'>
+
+                        <Text fontWeight='bold' id='empre'>
+                            {props.proposta.name}
+                        </Text>
+                        <Text fontSize='sm'>@{props.proposta.usuario}</Text>
+                    </Box>
+                    <Spacer />
+                    <Box
+                        ml='2rem' display="flex" float="right"
+                    >
+                        <Button
+                            bg={'bluePrimary.500'}
+                            color={'white'}
+                            boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'}
+                            _hover={{
+                                bg: 'bluePrimary.600',
+                            }}
+                            _focus={{
+                                bg: 'bluePrimary.600',
+                            }}
+                            onClick={() => router.push('/descricaoProposta?idproposta=' + props.proposta.id + '&nome=' + props.proposta.name + '&empresa=' + props.proposta.empresa + '&descricao=' + props.proposta.descricao + '&midia=' + props.proposta.midia + '&setor=' + props.proposta.setorAtuacao + '&usuario=' + props.proposta.usuario)}
+                        >
+                            Ver proposta
+                        </Button>
+                    </Box>
+                </Flex></>
 
                     
                 

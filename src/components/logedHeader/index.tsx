@@ -13,12 +13,14 @@ import {
     MenuDivider,
     useDisclosure,
     useColorModeValue,
-    Stack,
+    Input,
     Image,
+    InputGroup,
+    InputRightElement,
 
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { BellIcon, CopyIcon, DragHandleIcon } from '@chakra-ui/icons';
+import { Search2Icon } from '@chakra-ui/icons';
 import { AiOutlinePlayCircle, AiOutlineFileDone, AiOutlineBell } from "react-icons/ai";
 
 
@@ -42,6 +44,25 @@ export function LogedHeader() {
                         </Box>
                         
                     </HStack>
+                    
+                    <Flex alignItems={'center'}>
+                            {/* <Input w="600px" variant='filled' placeholder='Buscar' /> */}
+                            <InputGroup size='md'>
+                                <Input
+                                    pr='4.5rem'
+                                    w="600px"
+                                    variant='filled'
+                                    placeholder='Buscar'
+                                />
+                                <InputRightElement width='4.5rem'>
+                                    <Button leftIcon={<Search2Icon />} h='1.75rem' size='sm' onClick={() => router.push('/busca')}></Button>
+                                </InputRightElement>
+                            </InputGroup>
+                    </Flex>
+                        
+
+                        
+                    
                     <Flex alignItems={'center'}>
                         <IconButton
                             size={'lg'}
