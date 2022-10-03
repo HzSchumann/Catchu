@@ -64,11 +64,10 @@ export default function Propostas() {
             
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-<<<<<<< HEAD
+
                 <Avatar src='/images/send.png' onClick={() => router.push('/perfil-marca')} />
-=======
-                <Avatar src='' onClick={() => router.push('/perfil-marca')} />
->>>>>>> 92aeede3d81c5a589e0e77fe6c910740eda8dcce
+
+
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
@@ -107,11 +106,8 @@ export default function Propostas() {
             
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-<<<<<<< HEAD
                 <Avatar src='/images/receive.png' onClick={() => router.push('/perfil-marca')} />
-=======
-                <Avatar src='' onClick={() => router.push('/perfil-marca')} />
->>>>>>> 92aeede3d81c5a589e0e77fe6c910740eda8dcce
+
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
