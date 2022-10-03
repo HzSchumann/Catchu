@@ -30,7 +30,7 @@ export default function Home() {
               >
                 <br />{' '}
                 <Text color={'bluePrimary.500'} as={'span'}>
-                  Olá, bem-vindx
+                  Olá, bem-vindo(a)
                 </Text>{' '}
                 Encontre ajuda para seu sucesso
               </Text>
