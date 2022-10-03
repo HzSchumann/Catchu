@@ -64,7 +64,10 @@ export default function Propostas() {
             
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
+
                 <Avatar src='/images/send.png' onClick={() => router.push('/perfil-marca')} />
+
+
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
@@ -104,6 +107,7 @@ export default function Propostas() {
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
                 <Avatar src='/images/receive.png' onClick={() => router.push('/perfil-marca')} />
+
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
