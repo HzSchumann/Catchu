@@ -25,6 +25,9 @@ export default function HomePage() {
             </LogedHeader>
             <h6 id='message1' ></h6>
             <Box p="2rem">
+                <Heading fontSize={'3xl'} font-weight="bolder" mb="2rem">
+                    Olá Lucas, tudo bem?
+                </Heading>
                 <Carrossel>
                 </Carrossel>
 

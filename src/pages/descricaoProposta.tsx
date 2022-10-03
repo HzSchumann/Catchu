@@ -10,7 +10,9 @@ import { collection, query, where, onSnapshot } from "firebase/firestore";
 import {
     FormControl,
     FormLabel,
-    Input
+    Box,
+    Text,
+    Divider,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
@@ -19,7 +21,7 @@ import { useRouter } from 'next/router';
 export default function DescricaoProposta({ navigation }) {
     const router = useRouter();
 
-        
+
     /*document.getElementById('empresaNome').value = parseGET('empresa');
     document.getElementById('descri').value = parseGET('descrica');
     document.getElementById('setorAt').value = parseGET('setor');
@@ -34,30 +36,30 @@ export default function DescricaoProposta({ navigation }) {
     const usuarioU = new URLSearchParams(window.location.search).get("usuario");
     const idPropostaU = new URLSearchParams(window.location.search).get("idproposta");
 
-    async function adicionarProposta(){
+    async function adicionarProposta() {
         router.push('/propostas');
     }
 
     function deleteCampaign() {
-        
+
 
         const docRef = doc(db, "Proposta", idPropostaU);
 
         deleteDoc(docRef)
-        .then(() => {
-            console.log("Entire Document has been deleted successfully.")
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(() => {
+                console.log("Entire Document has been deleted successfully.")
+            })
+            .catch(error => {
+                console.log(error);
+            })
         router.push('/propostas');
     }
 
     return (
 
         <>
-        <LogedHeader>
-        </LogedHeader>
+            <LogedHeader>
+            </LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"
@@ -67,84 +69,120 @@ export default function DescricaoProposta({ navigation }) {
                 mt='2rem'
             >
                 <GridItem rowSpan={2}>
-                    <Center  h='200px' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center'>
+                    <Center pl='2rem' h='200px' width='100%' mr="4" boxShadow='xs' rounded='md' bg='white' text-align='center' >
                         <Heading >Adicionar Proposta</Heading>
                     </Center >
+                    <Button
+                    flex={1}
+                    width={'100%'}
+                    mt={'2rem'}
+                    bg={'bluePrimary.500'}
+                    color={'white'}
+                    boxShadow={
+                        '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                    }
+                    _hover={{
+                        bg: 'bluePrimary.600',
+                    }}
+                    _focus={{
+                        bg: 'bluePrimary.600',
+                    }}
+                    onClick={() => adicionarProposta()}
+                    onPress={() => {
+                        adicionarProposta()
+                    }}
+                >
+                    Voltar para propostas
+                </Button>
                 </GridItem>
                 <script>
-                    
+
                 </script>
 
                 <GridItem colSpan={4}>
-                <FormControl id="userName">
-                        <FormLabel id='nome' >Nome: {nomeU} </FormLabel>
-                        
-                    </FormControl>
-                    <br/>
-                <FormControl id="empresaName">
-                        <FormLabel id='empresaNome'>Empresa: {empresaU}</FormLabel>
-                        
-                    </FormControl>
-                    <br/>
-                    <FormControl id="desc">
-                        <FormLabel id='descri'>Descrição: {desU}</FormLabel>
-                        
-                    </FormControl>
-                    <br/>
-                    <FormControl id="setor">
-                        <FormLabel id='setorAt'>Setor de Atuação: {setU}o</FormLabel>
-                        
-                    </FormControl>
-                    <br/>
-                    <FormControl id="veiculo">
-                        <FormLabel id='veiculoMidia'>Plataforma de divulgação: {midiaU}</FormLabel>
-                        
-                    </FormControl>
-                    <br/>
-                    <FormControl id="usuario">
-                        <FormLabel id='user'>nome de usuário na plataforma: {usuarioU}</FormLabel>
-                       
-                    </FormControl>
+                    <Box height="auto" boxShadow='xs' rounded='md' p="2rem">
+                        <FormControl id="userName">
+                            <Text>
+                                Nome:
+                            </Text>
+                            <FormLabel id='nome' >{nomeU} </FormLabel>
+                        </FormControl>
+                        <Divider />
+                        <br />
+
+                        <FormControl id="empresaName">
+                            <Text>
+                                Empresa:
+                            </Text>
+                            <FormLabel id='empresaNome'>{empresaU}</FormLabel>
+                        </FormControl>
+                        <Divider />
+                        <br />
+
+                        <FormControl id="desc">
+                            <Text>
+                                Descrição:
+                            </Text>
+                            <FormLabel id='descri'>{desU}</FormLabel>
+                        </FormControl>
+                        <Divider />
+                        <br />
+
+                        <FormControl id="setor">
+                            <Text>
+                                Setor de Atuação:
+                            </Text>
+                            <FormLabel id='setorAt'>{setU}</FormLabel>
+                        </FormControl>
+                        <Divider />
+                        <br />
+
+                        <FormControl id="veiculo">
+                            <Text>
+                                Plataforma de divulgação:
+                            </Text>
+                            <FormLabel id='veiculoMidia'>{midiaU}</FormLabel>
+                        </FormControl>
+                        <Divider />
+                        <br />
+
+                        <FormControl id="usuario">
+                            <Text>
+                                Nome de usuário na plataforma:
+                            </Text>
+                            <FormLabel id='user'>{usuarioU}</FormLabel>
+                        </FormControl>
+                        <Divider />
+
+                    </Box>
                 </GridItem>
-                <Button
-                            bg={'bluePrimary.500'} 
+                
+                <GridItem colSpan={4}>
+                    <Box w='100%' justify='center' bg='red'>
+
+                        <Button
+                            float='right'
+                            w='300px'
+                            bg={'red.500'}
                             color={'white'}
                             boxShadow={
                                 '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
                             }
                             _hover={{
-                                bg: 'bluePrimary.600',
+                                bg: 'red.600',
                             }}
                             _focus={{
-                                bg: 'bluePrimary.600',
+                                bg: 'red.600',
                             }}
-                            onClick={() => adicionarProposta()}
-                                    onPress={() => {
-                                        adicionarProposta()
-                                    }}
-                            >
-                                Voltar para propostas
-                            </Button>
-                            <br/>
-                            <Button
-                                bg={'red.500'} 
-                                color={'white'}
-                                boxShadow={
-                                    '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                                }
-                                _hover={{
-                                    bg: 'red.600',
-                                }}
-                                _focus={{
-                                    bg: 'red.600',
-                                }}
-                                onClick={() => deleteCampaign()}
-                                >
-                                    Deletar
-                                </Button>
+                            onClick={() => deleteCampaign()}
+                        >
+                            Cancelar Proposta
+                        </Button>
+                    </Box>
+                </GridItem>
             </Grid>
 
-            
+
 
         </>
     )

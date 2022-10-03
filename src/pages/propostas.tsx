@@ -64,7 +64,7 @@ export default function Propostas() {
             
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-                <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')} />
+                <Avatar src='/images/send.png' onClick={() => router.push('/perfil-marca')} />
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
@@ -103,7 +103,7 @@ export default function Propostas() {
             
 
                     <Flex ml='2rem' p="4" boxShadow='xs' rounded='md' bg='white'>
-                <Avatar src='https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2021/12/logo-adidas-2022-pb.jpg' onClick={() => router.push('/perfil-marca')} />
+                <Avatar src='/images/receive.png' onClick={() => router.push('/perfil-marca')} />
                 <Box ml='2rem'>
 
                     <Text fontWeight='bold' id='empre'>
@@ -179,16 +179,8 @@ export default function Propostas() {
                 {allCampaigns.map((proposta)=> <Item key={proposta.id} proposta={proposta}/>)}
                 {todasEmpresas.map((proposta2)=> <Item2 key={proposta2.id} proposta2={proposta2}/>)}
 
-                    
-
-                    
                 </GridItem>
-
-                
             </Grid>
-
-           
-
         </>
     )
     

@@ -14,14 +14,27 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { LogedHeader } from '../components/logedHeader/index';
 
 const options = [
-    { id: 1, desc: 'Faça até 3 conexões por dia' },
+    { id: 1, desc: 'Buscas personalizadas' },
+    { id: 2, desc: 'Conteúdo orientador de carreira' },
+    { id: 3, desc: 'Até 3 parcerias por mês' },
 ];
 
 const optionsPlus = [
-    { id: 1, desc: 'Faça conexões ilimitadas' },
-    { id: 2, desc: 'Saiba quem visitou seu perfil' },
+    { id: 1, desc: 'Buscas personalizadas' },
+    { id: 2, desc: 'Conteúdo orientador de carreira' },
+    { id: 3, desc: 'Parcerias ilimitadas' },
+    { id: 4, desc: 'Saiber quem visitou seu perfil' },
+    { id: 5, desc: 'Melhora sua posição nas buscas' },
     
 ];
+
+const optionsCompany = [
+    { id: 1, desc: 'Buscas personalizadas' },
+    { id: 2, desc: 'Portifólio de negócio' },
+    { id: 3, desc: 'Parcerias ilimitadas' },
+    
+];
+
 interface PackageTierProps {
     title: string;
     options: Array<{ id: number; desc: string }>;
@@ -118,13 +131,19 @@ const ThreeTierPricingHorizontal = () => {
                         </Stack>
                     </Stack>
                     <Divider />
-                    <PackageTier title={'Starter'} typePlan="Grátis" options={options} />
+                    <PackageTier title={'Básico'} typePlan="Gratuito" options={options} />
                     <Divider />
                     <PackageTier
-                        title={'Catch Plus'}
+                        title={'Completo'}
                         checked={true}
-                        typePlan="R$16,00"
+                        typePlan="R$32,00/mês"
                         options={optionsPlus} />
+                    <Divider />
+                    <PackageTier
+                        title={'Plano Empresa'}
+                        checked={true}
+                        typePlan="Taxa de 15% por parceria"
+                        options={optionsCompany} />
                 </Stack>
             </Box></>
     );
