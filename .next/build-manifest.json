@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/adicionarProposta.js"
     ],
-    "/descricaoPropostaRecebida": [
+    "/descricaoProposta": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/descricaoPropostaRecebida.js"
+      "static/chunks/pages/descricaoProposta.js"
     ],
     "/propostas": [
       "static/chunks/webpack.js",
