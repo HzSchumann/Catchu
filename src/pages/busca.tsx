@@ -17,18 +17,27 @@ import {
 } from '@chakra-ui/react';
 import router from '../../node_modules/next/router';
 
+
+
+
+
+
+
 export default function Busca() {
 
+    console.log('teste ' + preencherDados.idUser);
     return (
         <>
-            <LogedHeader></LogedHeader>
+            <LogedHeader>
+            </LogedHeader>
             <h6 id='message1' ></h6>
             <Box p="2rem">
                 <Heading fontSize={'3xl'} font-weight="bolder" mb="1rem">
                     Esporte
                 </Heading>
 
-                <CardPerfil></CardPerfil>
+                <CardPerfil>
+                </CardPerfil>
 
                 <Center pb="1rem">
                     <Stack

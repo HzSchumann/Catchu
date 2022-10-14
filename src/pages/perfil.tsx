@@ -22,7 +22,8 @@ export default function UserProfileEdit(): JSX.Element {
     const router = useRouter();
     return (
         <>
-        <LogedHeader></LogedHeader>
+        <LogedHeader>
+        </LogedHeader>
         <Flex
             minH={'100vh'}
             align={'center'}

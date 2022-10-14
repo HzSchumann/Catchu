@@ -26,7 +26,6 @@ import auth from '../config/firebaseconfig';
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 var erro = "";
 
-
 export default function Cadastro() {
     const [showPassword, setShowPassword] = useState(false);
     const [value, setValue] = React.useState('1')
@@ -34,13 +33,13 @@ export default function Cadastro() {
 
     function addUser(){
         let UserModel = userModel();
-        UserModel.email = (document.getElementById("email") as HTMLInputElement).value;
-        UserModel.password = (document.getElementById("password") as HTMLInputElement).value;
+        UserModel.email = document.getElementById("email").value;
+        UserModel.password = document.getElementById("password").value;
 
         createUserWithEmailAndPassword(auth, UserModel.email, UserModel.password)
         .then((userCredential) => {
             const user = userCredential.user;
-            // user.displayName = document.getElementById("name").value;
+            user.displayName = document.getElementById("name").value
             router.push('/home-page');
             console.log(user.uid);
             console.log(user);
@@ -64,7 +63,8 @@ export default function Cadastro() {
 
     return (
         <>
-        <Header></Header>
+        <Header>
+        </Header>
         <Flex
             minH={'100vh'}
             align={'center'}
@@ -128,6 +128,9 @@ export default function Cadastro() {
                                     bg={'blue.400'}
                                     color={'white'}
                                     onClick={() => addUser()}
+                                    onPress={() => {
+                                        addUser()
+                                    }}
                                     _hover={{
                                         bg: 'blue.500',
                                         

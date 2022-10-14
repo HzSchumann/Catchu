@@ -75,6 +75,7 @@ export function Header() {
                         fontWeight={600}
                         color={'white'}
                         bgColor={'bluePrimary.500'}
+                        href={'#'}
                         _hover={{
                             bg: 'bluePrimary.600',
                         }}

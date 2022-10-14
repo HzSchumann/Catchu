@@ -95,8 +95,9 @@ const PackageTier = ({
 const ThreeTierPricingHorizontal = () => {
     return (
         <>
-        <LogedHeader></LogedHeader>
-        <Box py={6} px={5}>
+        <LogedHeader>
+        </LogedHeader>
+        <Box py={6} px={5} min={'100vh'}>
                 <Stack spacing={4} width={'100%'} direction={'column'}>
                     <Stack
                         p={5}

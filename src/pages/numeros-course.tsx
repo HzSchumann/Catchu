@@ -16,7 +16,8 @@ export default function Propostas() {
     return (
 
         <>
-            <LogedHeader></LogedHeader>
+            <LogedHeader>
+            </LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"

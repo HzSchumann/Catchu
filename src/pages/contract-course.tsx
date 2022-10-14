@@ -16,7 +16,8 @@ export default function Propostas() {
     return (
 
         <>
-            <LogedHeader></LogedHeader>
+            <LogedHeader>
+            </LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"
@@ -89,24 +90,6 @@ export default function Propostas() {
                     <Box h='55px' boxShadow='xs' rounded='md' p="1rem">
                         <Text as='b'>
                             6. Benefícios
-                        </Text>
-                        <Icon w={6} h={6} float="right" color='bluePrimary.600' as={AiOutlinePlayCircle}></Icon>
-                    </Box>
-                    <Box h='55px' boxShadow='xs' rounded='md' p="1rem">
-                        <Text as='b'>
-                            7. Conclusão
-                        </Text>
-                        <Icon w={6} h={6} float="right" color='bluePrimary.600' as={AiOutlinePlayCircle}></Icon>
-                    </Box>
-                    <Box h='55px' boxShadow='xs' rounded='md' p="1rem">
-                        <Text as='b'>
-                            7. Conclusão
-                        </Text>
-                        <Icon w={6} h={6} float="right" color='bluePrimary.600' as={AiOutlinePlayCircle}></Icon>
-                    </Box>
-                    <Box h='55px' boxShadow='xs' rounded='md' p="1rem">
-                        <Text as='b'>
-                            7. Conclusão
                         </Text>
                         <Icon w={6} h={6} float="right" color='bluePrimary.600' as={AiOutlinePlayCircle}></Icon>
                     </Box>
