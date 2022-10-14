@@ -22,19 +22,21 @@ export default function DescricaoProposta({ navigation }) {
     const router = useRouter();
 
 
+
+
     /*document.getElementById('empresaNome').value = parseGET('empresa');
     document.getElementById('descri').value = parseGET('descrica');
     document.getElementById('setorAt').value = parseGET('setor');
     document.getElementById('veiculoMidia').value = parseGET('midia');
     document.getElementById('user').value = parseGET('usuario');*/
 
-    const nomeU = new URLSearchParams(window.location.search).get("nome");
-    const empresaU = new URLSearchParams(window.location.search).get("empresa");
-    const desU = new URLSearchParams(window.location.search).get("descricao");
-    const setU = new URLSearchParams(window.location.search).get("setor");
-    const midiaU = new URLSearchParams(window.location.search).get("midia");
-    const usuarioU = new URLSearchParams(window.location.search).get("usuario");
-    const idPropostaU = new URLSearchParams(window.location.search).get("idproposta");
+    const nomeU = new URLSearchParams().get("nome");
+    const empresaU = new URLSearchParams().get("empresa");
+    const desU = new URLSearchParams().get("descricao");
+    const setU = new URLSearchParams().get("setor");
+    const midiaU = new URLSearchParams().get("midia");
+    const usuarioU = new URLSearchParams().get("usuario");
+    const idPropostaU = new URLSearchParams().get("idproposta");
 
     async function adicionarProposta() {
         router.push('/propostas');
@@ -58,8 +60,7 @@ export default function DescricaoProposta({ navigation }) {
     return (
 
         <>
-            <LogedHeader>
-            </LogedHeader>
+            <LogedHeader></LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"
@@ -88,9 +89,6 @@ export default function DescricaoProposta({ navigation }) {
                         bg: 'bluePrimary.600',
                     }}
                     onClick={() => adicionarProposta()}
-                    onPress={() => {
-                        adicionarProposta()
-                    }}
                 >
                     Voltar para propostas
                 </Button>
@@ -158,7 +156,7 @@ export default function DescricaoProposta({ navigation }) {
                 </GridItem>
                 
                 <GridItem colSpan={4}>
-                    <Box w='100%' justify='center' bg='red'>
+                    <Box w='100%' bg='red'>
 
                         <Button
                             float='right'

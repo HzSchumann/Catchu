@@ -1,14 +1,11 @@
-import { Stack } from '@chakra-ui/react'
-import { Flex, Heading, Text, useBreakpointValue, Button, Image } from '@chakra-ui/react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Flex, Heading, Text, useBreakpointValue, Button, Image, Stack } from '@chakra-ui/react';
 import { Header } from '../components/Header/index';
 
 export default function Home() {
   
   return (
     <>
-      <Header>
-      </Header>
+      <Header></Header>
 
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -36,7 +33,7 @@ export default function Home() {
               </Text>
             </Heading>
             <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-              The project board is an exclusive resource for contract work. It's
+              The project board is an exclusive resource for contract work. Its
               perfect for freelancers, agencies, and moonlighters.
             </Text>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>

@@ -25,17 +25,17 @@ var idUser;
 var nomeUser;
     function addUser(){
         let UserModel = userModel();
-        UserModel.email = document.getElementById("email").value;
-        UserModel.password = document.getElementById("password").value;
+        UserModel.email = (document.getElementById("email") as HTMLInputElement).value;
+        UserModel.password = (document.getElementById("password") as HTMLInputElement).value;
 
         signInWithEmailAndPassword(auth, UserModel.email, UserModel.password)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
             router.push('/home-page');
-            idUser = user.id;
+            // idUser = user.id;
             nomeUser = user.displayName;
-            preencherDados(user.id);
+            // preencherDados(user.id);
             console.log(user.uid);
           })
           .catch((error) => {
@@ -54,8 +54,7 @@ var nomeUser;
 
     return (
         <>
-        <Header>
-        </Header>
+        <Header></Header>
         <Flex
             minH={'100vh'}
             align={'center'}
@@ -100,9 +99,6 @@ var nomeUser;
                                         bg: 'blue.500',
                                     }}
                                     onClick={() => addUser()}
-                                    onPress={() => {
-                                        addUser()
-                                    }}
                                 >
                                     Entrar
                                 </Button>

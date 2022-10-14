@@ -23,8 +23,7 @@ export default function UserProfileEdit(): JSX.Element {
     const router = useRouter();
     return (
         <>
-        <LogedHeader>
-        </LogedHeader>
+        <LogedHeader></LogedHeader>
         <Grid
                 pl="2rem"
                 pr="2rem"

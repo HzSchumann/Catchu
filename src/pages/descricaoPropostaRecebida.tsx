@@ -21,12 +21,12 @@ import { useRouter } from 'next/router';
 export default function DescricaoProposta({ navigation }) {
     const router = useRouter();
 
-    const empresaU = new URLSearchParams(window.location.search).get("empresa");
-    const desU = new URLSearchParams(window.location.search).get("descricao");
-    const setU = new URLSearchParams(window.location.search).get("setor");
-    const usuarioU = new URLSearchParams(window.location.search).get("usuarioEmpresa");
-    const aceitoU = new URLSearchParams(window.location.search).get("aceito");
-    const idU = new URLSearchParams(window.location.search).get("idproposta");
+    const empresaU = new URLSearchParams().get("empresa");
+    const desU = new URLSearchParams().get("descricao");
+    const setU = new URLSearchParams().get("setor");
+    const usuarioU = new URLSearchParams().get("usuarioEmpresa");
+    const aceitoU = new URLSearchParams().get("aceito");
+    const idU = new URLSearchParams().get("idproposta");
     async function atualizarProposta() {
         let propostaModel = PropostaModel();
 
@@ -64,8 +64,7 @@ export default function DescricaoProposta({ navigation }) {
     return (
 
         <>
-            <LogedHeader>
-            </LogedHeader>
+            <LogedHeader></LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"
@@ -94,9 +93,6 @@ export default function DescricaoProposta({ navigation }) {
                             bg: 'bluePrimary.600',
                         }}
                         onClick={() => adicionarProposta()}
-                        onPress={() => {
-                            adicionarProposta()
-                        }}
                     >
                         Voltar para propostas
                     </Button>
@@ -156,7 +152,7 @@ export default function DescricaoProposta({ navigation }) {
                 </GridItem>
                 
                 <GridItem colSpan={4}>
-                    <Box w='100%' justify='center'>
+                    <Box w='100%'>
 
                         <Button
                             mr='2rem'

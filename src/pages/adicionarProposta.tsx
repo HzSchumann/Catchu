@@ -11,18 +11,20 @@ import {
     Input
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import React from "react";
 
 export default function AdicionarPropostas() {
     const router = useRouter();
 
+
     async function adicionarProposta(){
         let propostaModel = PropostaModel();
-        propostaModel.descricao = document.getElementById("desc").value;
-        propostaModel.empresa = document.getElementById("empresaName").value;
-        propostaModel.name = document.getElementById("userName").value;
-        propostaModel.setorAtuacao = document.getElementById("setor").value;
-        propostaModel.veiculoMidiaticoPrincipal = document.getElementById("veiculo").value;
-        propostaModel.usuarioPlataforma = document.getElementById("usuario").value;
+        propostaModel.descricao = (document.getElementById("desc") as HTMLInputElement).value;
+        propostaModel.empresa = (document.getElementById("empresaName")as HTMLInputElement).value;
+        propostaModel.name = (document.getElementById("userName")as HTMLInputElement).value;
+        propostaModel.setorAtuacao = (document.getElementById("setor")as HTMLInputElement).value;
+        propostaModel.veiculoMidiaticoPrincipal = (document.getElementById("veiculo")as HTMLInputElement).value;
+        propostaModel.usuarioPlataforma = (document.getElementById("usuario")as HTMLInputElement).value;
 
         const docData = {
             descricao: propostaModel.descricao,
@@ -40,8 +42,7 @@ export default function AdicionarPropostas() {
     return (
 
         <>
-        <LogedHeader>
-        </LogedHeader>
+        <LogedHeader></LogedHeader>
             <Grid
                 pl="2rem"
                 pr="2rem"
@@ -119,17 +120,12 @@ export default function AdicionarPropostas() {
                             bg: 'bluePrimary.600',
                         }}
                         onClick={() => adicionarProposta()}
-                                onPress={() => {
-                                    adicionarProposta()
-                                }}
+                    
                         >
                             Salvar Proposta
                     </Button>
                 </GridItem>
             </Grid>
-
-            
-
         </>
     )
 }
