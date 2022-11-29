@@ -78,7 +78,7 @@ var nomeUser;
                         p={8}>
                         <Stack spacing={4}>
                             <FormControl id="email">
-                                <FormLabel>Email</FormLabel>
+                                <FormLabel>Email-</FormLabel>
                                 <Input type="email" />
                             </FormControl>
                             <FormControl id="password">
